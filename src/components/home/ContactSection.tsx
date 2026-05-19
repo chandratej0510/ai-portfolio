@@ -49,7 +49,7 @@ export default function ContactSection() {
             </Link>
 
             <Link 
-              href="https://drive.google.com/file/d/11FnNsliPV5lxcHM1-U2UZBjXEZxJMPCJ/view?usp=sharing"
+              href="https://drive.google.com/file/d/1iouGLv6GIqkrfq8gyRVNdCkS_MwJ-b2S/view?usp=sharing"
               target="_blank"
               className="w-full sm:w-auto px-8 py-4 font-medium text-foreground hover:text-white bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 rounded-xl transition-all flex items-center justify-center gap-2"
             >
