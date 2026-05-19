@@ -74,7 +74,7 @@ export default function Hero() {
               </Link>
               
               <Link 
-                href="https://drive.google.com/file/d/1GDRwWbDns6pJqAIgChlD2qnsGCvLTm5l/view?usp=sharing" 
+                href="https://drive.google.com/file/d/11FnNsliPV5lxcHM1-U2UZBjXEZxJMPCJ/view?usp=sharing" 
                 target="_blank"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 font-medium text-foreground/80 hover:text-foreground bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all hover:scale-[1.02]"
               >
