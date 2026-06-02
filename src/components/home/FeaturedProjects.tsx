@@ -1,12 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Layers, ArrowRight, Server, Search } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
+import CaseStudiesModal from './CaseStudiesModal';
 
 const projects = [
   {
+    id: 'resume-screener',
     title: 'AI Resume Screener',
     subtitle: 'LLM & Semantic Matching Platform',
     description: 'An intelligent candidate evaluation system that leverages semantic embeddings and vector similarity to rank candidates against job descriptions with high precision.',
@@ -16,12 +19,11 @@ const projects = [
     borderGlow: 'hover:border-primary/50',
     links: {
       demo: 'https://ai-resume-screener-red-six.vercel.app/',
-      github: 'https://github.com/chandratej0510/ai-resume-screener',
-      architecture: '#architecture',
-      caseStudy: '#architecture'
+      github: 'https://github.com/chandratej0510/ai-resume-screener'
     }
   },
   {
+    id: 'career-os',
     title: 'AI Career Intelligence Platform',
     subtitle: 'Next-Gen Career OS',
     description: 'A scalable job application tracking platform with workflow automation, analytics dashboards, and AI-assisted tracking features. Designed Firestore-backed data pipelines for real-time updates.',
@@ -31,12 +33,11 @@ const projects = [
     borderGlow: 'hover:border-accent/50',
     links: {
       demo: 'https://ai-career-platform-pink-nine.vercel.app/',
-      github: 'https://github.com/chandratej0510/ai-career-platform',
-      architecture: '#architecture',
-      caseStudy: '#architecture'
+      github: 'https://github.com/chandratej0510/ai-career-platform'
     }
   },
   {
+    id: 'legal-copilot',
     title: 'Legal Contract Copilot',
     subtitle: 'Auditable Enterprise RAG Platform',
     description: 'An auditable enterprise RAG system featuring hybrid search (FAISS + BM25 via RRF), click-to-scroll citation highlights, side-by-side clause comparison matrix, and simulated cloud connectors. Built on a pluggable dual-strategy design supporting local PyTorch models and cloud-hosted API models with automatic fallback.',
@@ -46,14 +47,14 @@ const projects = [
     borderGlow: 'hover:border-purple-500/50',
     links: {
       demo: 'https://enterprise-rag-assistant-gules.vercel.app',
-      github: 'https://github.com/chandratej0510/enterprise-rag-assistant',
-      architecture: '#architecture',
-      caseStudy: '#architecture'
+      github: 'https://github.com/chandratej0510/enterprise-rag-assistant'
     }
   }
 ];
 
 export default function FeaturedProjects() {
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+
   return (
     <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -115,10 +116,13 @@ export default function FeaturedProjects() {
                   <Link href={project.links.github} target="_blank" className="flex items-center justify-center gap-2 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10">
                     <FaGithub size={14} /> Code
                   </Link>
-                  <Link href={project.links.architecture} className="col-span-2 flex items-center justify-between px-4 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 group/link">
+                  <button 
+                    onClick={() => setSelectedProjectId(project.id)}
+                    className="col-span-2 flex items-center justify-between px-4 py-2 text-sm bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 group/link cursor-pointer text-left"
+                  >
                     <span>View Architecture & Case Study</span>
                     <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -126,6 +130,12 @@ export default function FeaturedProjects() {
         </div>
 
       </div>
+
+      {/* Case Studies Dialog Modal */}
+      <CaseStudiesModal 
+        projectId={selectedProjectId} 
+        onClose={() => setSelectedProjectId(null)} 
+      />
     </section>
   );
 }
