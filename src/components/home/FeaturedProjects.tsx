@@ -37,15 +37,15 @@ const projects = [
     }
   },
   {
-    title: 'Enterprise RAG Assistant',
-    subtitle: 'Coming Soon',
-    description: 'A highly scalable Retrieval-Augmented Generation pipeline designed for enterprise knowledge bases, featuring multi-document reasoning and grounded factual responses.',
-    tags: ['LangChain', 'FAISS', 'Pinecone', 'RAG', 'Semantic Retrieval'],
+    title: 'Legal Contract Copilot',
+    subtitle: 'Auditable Enterprise RAG Platform',
+    description: 'An auditable enterprise RAG system featuring hybrid search (FAISS + BM25 via RRF), click-to-scroll citation highlights, side-by-side clause comparison matrix, and simulated cloud connectors. Built on a pluggable dual-strategy design supporting local PyTorch models and cloud-hosted API models with automatic fallback.',
+    tags: ['FastAPI', 'Next.js', 'FAISS', 'BM25 + RRF', 'OpenAI API', 'Sentence Transformers', 'Cross-Encoder'],
     icon: <Server className="w-6 h-6 text-purple-400" />,
     color: 'from-purple-500/20 to-pink-500/20',
     borderGlow: 'hover:border-purple-500/50',
     links: {
-      demo: '#',
+      demo: 'https://enterprise-rag-assistant-gules.vercel.app',
       github: 'https://github.com/chandratej0510/enterprise-rag-assistant',
       architecture: '#architecture',
       caseStudy: '#architecture'

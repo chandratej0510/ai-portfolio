@@ -22,11 +22,11 @@ const roadmapItems = [
   },
   {
     id: 'enterprise-rag',
-    title: 'Enterprise RAG Assistant',
-    status: 'Architecture Design',
-    progress: 30,
-    description: 'Evaluating vector database sharding strategies (Pinecone) and multi-agent frameworks.',
-    icon: <Clock className="w-5 h-5 text-accent" />
+    title: 'Legal Contract Copilot',
+    status: 'In Production',
+    progress: 100,
+    description: 'Fully deployed enterprise legal contract RAG platform featuring a pluggable local/cloud architecture and citation highlights.',
+    icon: <CheckCircle2 className="w-5 h-5 text-green-400" />
   }
 ];
 
